@@ -9,7 +9,7 @@
 .Feedback__button:last-child {
     margin-right:0px;
 }
-.Feedback__button:nth-child(1n+3 ){
+.Feedback__button:nth-child(1n+2 ){
     margin-left: 15px;
 }
 .Feedback__list{

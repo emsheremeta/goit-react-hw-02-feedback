@@ -1,5 +1,8 @@
-import Feedback from "./feedback/Feedback"
 import React from "react";
+import css from "./feedback/Feedback.css"
+import FeedbackOptions from "./feedback/FeedbackOptions";
+import Statistics from "./feedback/Statistics";
+import Section from "./feedback/Section";
 
 
 class App extends React.Component { 
@@ -8,24 +11,13 @@ class App extends React.Component {
     neutral: 0,
     bad: 0
   };
-   votePositive = (event) => {
+   onLeaveFeedback = (event) => {
     console.log(event);
     this.setState(prevState => ({
-        good: prevState.good + 1
+        [event.target.name]: prevState[event.target.name] + 1
     }))
 }
- voteNeutral = (event) => {
-    console.log(event);
-    this.setState(prevState => ({
-        neutral: prevState.neutral + 1
-    }))
-}
- voteNegative = (event) => {
-    console.log(event);
-    this.setState(prevState => ({
-        bad: prevState.bad + 1
-    }))
-  }
+
 
   countTotalFeedback = () => {
       return this.state.good + this.state.neutral + this.state.bad;
@@ -49,22 +41,27 @@ class App extends React.Component {
       }}
     >
 
-<div>
-            <p className="Feedback__text">Please, leave  feedback</p>
-            <button type = "button" className="Feedback__button" onClick={this.votePositive}>Good</button>
-            <button type = "button" className="Feedback__button" onClick={this.voteNeutral}>Neutral</button>
-            <button type = "button" className="Feedback__button" onClick={this.voteNegative}>Bad</button>
-
-            <ul className="Feedback__text">Statistics</ul> 
-            <li className="Feedback__list">Good: {this.state.good}</li>
-            <li className="Feedback__list">Neutral: {this.state.neutral}</li>
-            <li className="Feedback__list">Bad: {this.state.bad}</li>
-            <li className="Feedback__list">Total: {this.countTotalFeedback()}</li>
-            <li className="Feedback__list">Positive feedback: {this.countPositiveFeedbackPercentage()}% </li>
+<div>           
             </div>
-      {/* < Feedback>
-       
-       </Feedback> */}
+            <Section title="Please leave feedback">
+            <FeedbackOptions
+            onLeaveFeedback={this.onLeaveFeedback}>
+           </FeedbackOptions>
+           </Section>
+            <Section title="Statistics">
+            <Statistics 
+            good={this.state.good}
+             neutral={this.state.neutral} 
+             bad={this.state.bad}
+              total={this.countTotalFeedback()} 
+              positivePercentage={this.countPositiveFeedbackPercentage()}>
+              </Statistics>
+            </Section>
+           
+           
+           
+              
+              
     </div>
     
   );
