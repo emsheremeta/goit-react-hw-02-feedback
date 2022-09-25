@@ -40,9 +40,6 @@ class App extends React.Component {
         color: '#010101'
       }}
     >
-
-<div>           
-            </div>
             <Section title="Please leave feedback">
             <FeedbackOptions
             onLeaveFeedback={this.onLeaveFeedback}>
@@ -59,11 +56,7 @@ class App extends React.Component {
               positivePercentage={this.countPositiveFeedbackPercentage()}>
               </Statistics>
             </Section>
-           
-           
-           
-              
-              
+                 
     </div>
     
   );
