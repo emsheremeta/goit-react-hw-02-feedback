@@ -1,3 +1,3 @@
-<FeedbackOptions
+{/* <FeedbackOptions
  options={}
-  onLeaveFeedback={}>.
+  onLeaveFeedback={}>. */}
