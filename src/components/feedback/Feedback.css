@@ -4,8 +4,14 @@
     font-weight: bold;
     background-color: white;
     margin-left: 30px;
+    cursor: pointer;
     
 }
+.Feedback__button:hover {
+background-color: blue;
+color: white;
+}
+  
 .Feedback__button:last-child {
     margin-right:0px;
 }

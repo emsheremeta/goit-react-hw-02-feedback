@@ -3,6 +3,7 @@ import css from "./feedback/Feedback.css"
 import FeedbackOptions from "./feedback/FeedbackOptions";
 import Statistics from "./feedback/Statistics";
 import Section from "./feedback/Section";
+import Notification from "./feedback/Notification"
 
 
 class App extends React.Component { 
@@ -49,6 +50,8 @@ class App extends React.Component {
            </FeedbackOptions>
            </Section>
             <Section title="Statistics">
+ 
+              
             <Statistics 
             good={this.state.good}
              neutral={this.state.neutral} 
