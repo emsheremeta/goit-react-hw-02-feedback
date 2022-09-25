@@ -1,4 +1,5 @@
 import React from "react";
+import css from "./Feedback.css"
 
 
 class Feedback extends React.Component {
@@ -37,17 +38,17 @@ class Feedback extends React.Component {
         return (
             
             <div>
-            <p>Please, leave  feedback</p>
-            <button type = "button" onClick={this.votePositive}>Good</button>
-            <button type = "button" onClick={this.voteNeutral}>Neutral</button>
-            <button type = "button" onClick={this.voteNegative}>Bad</button>
+            <p className="Feedback__text">Please, leave  feedback</p>
+            <button type = "button" className="Feedback__button" onClick={this.votePositive}>Good</button>
+            <button type = "button" className="Feedback__button" onClick={this.voteNeutral}>Neutral</button>
+            <button type = "button" className="Feedback__button" onClick={this.voteNegative}>Bad</button>
 
-            <ul>Statistics</ul> 
-            <li>Good: {this.state.good}</li>
-            <li>Neutral: {this.state.neutral}</li>
-            <li>Bad: {this.state.bad}</li>
-            <li>Total: {countTotalFeedback()}</li>
-            <li>Positive feedback: {countPositiveFeedbackPercentage()}% </li>
+            <ul className="Feedback__text">Statistics</ul> 
+            <li className="Feedback__list">Good: {this.state.good}</li>
+            <li className="Feedback__list">Neutral: {this.state.neutral}</li>
+            <li className="Feedback__list">Bad: {this.state.bad}</li>
+            <li className="Feedback__list">Total: {countTotalFeedback()}</li>
+            <li className="Feedback__list">Positive feedback: {countPositiveFeedbackPercentage()}% </li>
             </div>
         )
 
