@@ -1,26 +1,39 @@
 import React from "react";
+import ContactFilter from "./phonebook/ContactFilter";
+import Form from "./phonebook/Form"
+import {nanoid} from "nanoid"
+
+
+import ContactList from "./phonebook/ContactList";
 
 class PhoneApp extends React.Component { 
+  
   state = {
-    contacts: [],
-    name: ''
+    contacts: [
+       {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
+    {id: 'id-2', name: 'Hermione Kline', number: '443-89-12'},
+    {id: 'id-3', name: 'Eden Clements', number: '645-17-79'},
+    {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},
+  ],
+    filter: ''
   };
 
-  onChange = (event) => {
-    console.log(event);
+  onSubmit = (data) => {
+    console.log(data);
+    const {name, number} = data;
+    const id = nanoid();
+    const contact = {
+      id: id,
+      name: name,
+      number: number
+    };
     this.setState(prevState => ({
-      name: event.target.value
+      contacts: [...prevState.contacts, contact]
   }))
   }
 
-  onSubmit = (event) => {
-    console.log(event);
-    console.log(this.state.contacts);
-    this.setState(prevState => ({
-      contacts: [this.state.name].concat(prevState.contacts)
-  }))
-  }
-  
+
+
   render () {
    return (
     <div
@@ -33,16 +46,20 @@ class PhoneApp extends React.Component {
         color: '#010101'
       }}
     >
-           <input
-           onChange={this.onChange}
-  type="text"
-  name="name"
-  pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-  title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-  required
-/>
+      <Form
+      onSubmit = {this.onSubmit}>
 
-    <button onClick={this.onSubmit}>Add Contact</button>
+      </Form>
+      <ContactFilter
+      filter = {this.state.filter}
+      onChange = {this.onChange}
+      ></ContactFilter>
+      <ContactList
+      contacts = {this.state.contacts}
+      filter={this.state.filter}>
+
+      </ContactList>
+           
                  
     </div>
     
