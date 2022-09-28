@@ -9,7 +9,10 @@ class ContactList extends React.Component {
             {this.props.contacts.length !== 0 &&
             this.props.contacts.filter(contact => contact.name.toLowerCase().includes(this.props.filter.toLowerCase())).map((contact) => {
              return (
-               <Contact contact = {contact}></Contact>
+               <Contact contact = {contact}
+               onDelete={this.props.onDelete}>
+                
+               </Contact>
              )
            })}
     
