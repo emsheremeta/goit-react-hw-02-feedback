@@ -8,20 +8,17 @@ class Form extends React.Component {
   }
 
   
-  onChange = (event) => {
-    console.log(event);
-    const {name, value} = event.target;
-    this.setState ({[name] : value});
-    event.target.value = value;
-  }
-
   onSubmit = (event) => {
     event.preventDefault();
     this.props.onSubmit(this.state);
     this.reset();
   }
 
-  
+  onChange = (event) => {
+    console.log(event);
+    const {name, value} = event.target;
+    this.setState ({[name] : value});
+  }
   
   reset = () => {
     this.setState({name: '', number: ''})
@@ -30,10 +27,13 @@ class Form extends React.Component {
     
     return (
         <div>
-    <form
+    <form className="Phonebook__form"
     onSubmit = {this.onSubmit}> 
-        <label htmlFor="" >Name
-        <input
+        <label  className="Phonebook__label"  >
+            Name
+            </label>
+        <input className="Phonebook__input" size={35}
+         placeholder="Put your name here" 
            onChange={this.onChange}
   type="text"
   name="name"
@@ -43,9 +43,12 @@ class Form extends React.Component {
   required
 />
 
+       
+        <label className="Phonebook__label">  
+        Number
         </label>
-        <label> Number
-        <input
+        <input className="Phonebook__input" size={35}
+         placeholder="Put your number here" 
         onChange = {this.onChange}
   type="tel"
   name="number"
@@ -54,8 +57,8 @@ class Form extends React.Component {
   title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
   required
 />
-        </label>
-        <button onClick={this.onSubmit}>Add Contact</button>
+        
+        <button  className="Phonebook__button" onClick={this.onSubmit}>Add Contact</button>
       </form>
         </div>
     );

@@ -5,7 +5,7 @@ class Contact extends React.Component {
     const {id, name, number} = this.props.contact;
 
     return (
-        <li id={id}>{name}: {number}</li>
+        <li className="Phonebook__contactList" id={id}>{name}: {number}</li>
     );
   }
 }

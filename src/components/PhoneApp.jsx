@@ -2,6 +2,7 @@ import React from "react";
 import ContactFilter from "./phonebook/ContactFilter";
 import Form from "./phonebook/Form"
 import {nanoid} from "nanoid"
+import "./phonebook/Phonebook.css"
 
 
 import ContactList from "./phonebook/ContactList";
@@ -17,6 +18,11 @@ class PhoneApp extends React.Component {
   ],
     filter: ''
   };
+
+  onChange = (event) => {
+    this.setState ({filter : event.currentTarget.value});
+  }
+
 
   onSubmit = (data) => {
     console.log(data);
@@ -36,20 +42,15 @@ class PhoneApp extends React.Component {
 
   render () {
    return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'block',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
+    <div>
+    <h1 className="Phonebook__text">Phonebook</h1>
       <Form
       onSubmit = {this.onSubmit}>
 
       </Form>
+
+      <h2 className="Phonebook__text__contacts">Contacts</h2>
+
       <ContactFilter
       filter = {this.state.filter}
       onChange = {this.onChange}

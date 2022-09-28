@@ -4,16 +4,17 @@ class ContactFilter extends React.Component {
   render() {
     return (
         <div>
-            <ul>Contacts</ul>
-      <label> Find by name
-        <input
+      <label className="Phonebook__label__contacts"> 
+      Find contacts by name: 
+      </label>
+        <input className="Phonebook__input__constacts"
         
   type="text"
   name="filter"
   value={this.props.filter}
   onChange={this.props.onChange}
 />
-        </label>
+        
         </div>
     );
   }
