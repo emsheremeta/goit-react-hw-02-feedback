@@ -1,5 +1,5 @@
 import React from 'react';
-import './feedback/Feedback.css';
+// import './feedback/Feedback.css';
 import FeedbackOptions from './feedback/FeedbackOptions';
 import Statistics from './feedback/Statistics';
 import Section from './feedback/Section';

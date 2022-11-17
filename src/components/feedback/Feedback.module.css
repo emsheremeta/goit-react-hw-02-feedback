@@ -1,4 +1,4 @@
-.Feedback__button {
+.button {
     width: 60px;
     height: 30px;
     font-weight: bold;
@@ -7,24 +7,25 @@
     cursor: pointer;
     
 }
-.Feedback__button:hover {
+.button:hover,
+button:focus {
 background-color: blue;
 color: white;
 }
   
-.Feedback__button:last-child {
+.button:last-child {
     margin-right:0px;
 }
-.Feedback__button:nth-child(1n+2 ){
+.button:nth-child(1n+2 ){
     margin-left: 15px;
 }
-.Feedback__list{
+.list{
     list-style: none;
     margin-left: 30px;
     margin-top: 5px;
     
 }
-.Feedback__text {
+.text {
     text-decoration: black;
     font-weight: bold;
     text-align: left;
