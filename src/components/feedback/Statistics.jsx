@@ -7,10 +7,6 @@ class Statistics extends React.Component {
   render() {
     return (
       <div>
-        {this.props.total === 0 && (
-          <Notification title="There is no feedback"></Notification>
-        )}
-
         {this.props.total !== 0 && (
           <div>
             <li className={styles.list}>Good: {this.props.good}</li>
@@ -33,4 +29,5 @@ Statistics.propTypes = {
   good: PropTypes.number.isRequired,
   bad: PropTypes.number.isRequired,
   neutral: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.string.isRequired,
 };

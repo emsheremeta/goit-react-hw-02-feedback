@@ -3,6 +3,7 @@ import React from 'react';
 import FeedbackOptions from './feedback/FeedbackOptions';
 import Statistics from './feedback/Statistics';
 import Section from './feedback/Section';
+import Notification from './feedback/Notification';
 
 class App extends React.Component {
   state = {
@@ -45,6 +46,9 @@ class App extends React.Component {
           ></FeedbackOptions>
         </Section>
         <Section title="Statistics">
+          {this.state.good + this.state.bad + this.state.neutral === 0 && (
+            <Notification title="There is no feedback"></Notification>
+          )}
           <Statistics
             good={this.state.good}
             neutral={this.state.neutral}
