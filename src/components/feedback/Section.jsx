@@ -5,7 +5,7 @@ import styles from './Feedback.module.css';
 export default function Section({ title, children }) {
   return (
     <div>
-      <ul className={styles.text}>{title}</ul>
+      <h1 className={styles.text}>{title}</h1>
       {children}
     </div>
   );

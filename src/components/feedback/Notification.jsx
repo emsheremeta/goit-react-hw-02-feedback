@@ -6,5 +6,5 @@ export default function Notification({ title }) {
 }
 
 Notification.prototypes = {
-  title: PropTypes.string,
+  title: PropTypes.string.isRequired,
 };

@@ -26,7 +26,7 @@ export default function Statistics({
   );
 }
 Statistics.propTypes = {
-  total: PropTypes.number,
+  total: PropTypes.number.isRequired,
   good: PropTypes.number.isRequired,
   bad: PropTypes.number.isRequired,
   neutral: PropTypes.number.isRequired,
